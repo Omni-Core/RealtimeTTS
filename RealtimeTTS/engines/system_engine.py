@@ -61,7 +61,7 @@ class SystemEngine(BaseEngine):
         Args:
             text (str): Text to synthesize.
         """
-
+        
         self.engine.save_to_file(text, self.file_path)
         self.engine.runAndWait()
 

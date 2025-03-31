@@ -74,7 +74,7 @@ if __name__ == "__main__":
         filename = f"synthesis_{language}_" + engine.engine_name
 
         tokenizer = (
-            tokenizer = "stanza" if language in ["zh", "es", "de", "fr", "it", "ja", "ko", "ar", "hi", "pt", "ru", "id", "tr", "vi", "bn", "pl", "nl", "uk", "be", "ur", "mr", "te", "ta", "gu", "cs", "hu", "ml", "kn", "ne", "th"] else None
+            "stanza" if language in ["zh", "es", "de", "fr", "it", "ja", "ko", "ar", "hi", "pt", "ru", "id", "tr", "vi", "bn", "pl", "nl", "uk", "be", "ur", "mr", "te", "ta", "gu", "cs", "hu", "ml", "kn", "ne", "th"] else None
         )
         stream.play(
             minimum_sentence_length=2,
@@ -214,12 +214,21 @@ if __name__ == "__main__":
             }
             return SystemEngine(voice=voices[language])
 
-    languages = ["zh", "en", "es", "de", "fr", "it", "ja", "ko", "ar", "hi", "pt", "ru", "id", "tr", "vi", "bn", "pl", "nl", "uk", "be", "ur", "mr", "te", "ta", "gu", "cs", "hu", "ml", "kn", "ne", "th"]
+    # languages = ["zh", "en", "es", "de", "fr", "it", "ja", "ko", "ar", "hi", "pt", "ru", "id", "tr", "vi", "bn", "pl", "nl", "uk", "be", "ur", "mr", "te", "ta", "gu", "cs", "hu", "ml", "kn", "ne", "th"]
 
-    for engine_name in ["coqui", "elevenlabs", "azure", "system"]:
-        for language in languages:
-            print(f"Starting engine: {engine_name} for language: {language}")
-            engine = get_engine(engine_name, language)
-            print(f"Synthesizing with engine: {engine_name} for language: {language}")
-            synthesize(engine, language, dummy_generator)
+    # for engine_name in ["coqui", "elevenlabs", "azure", "system"]:
+    #     for language in languages:
+    #         print(f"Starting engine: {engine_name} for language: {language}")
+    #         engine = get_engine(engine_name, language)
+    #         print(f"Synthesizing with engine: {engine_name} for language: {language}")
+    #         synthesize(engine, language, dummy_generator)
+
+    engine_name = "coqui"
+    language = "ko"
+    print(f"Starting engine: {engine_name} for language: {language}")
+    engine = get_engine(engine_name, language)
+    print(f"Synthesizing with engine: {engine_name} for language: {language}")
+    synthesize(engine, language, dummy_generator)
+
+
 
